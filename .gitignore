@@ -1,0 +1,11 @@
+# 开发期临时产物
+_preview_*.png
+_tools/
+_资料/
+
+# Python / 编辑器
+__pycache__/
+*.pyc
+.vscode/
+.DS_Store
+Thumbs.db

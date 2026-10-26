@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>图提取 · 电商图片下载插件</title>
+  <meta name="description" content="图提取是一个 Chrome 扩展：在电商详情页一键抓取全部商品图，勾选后统一转成 PNG 批量下载或打包 ZIP。" />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- ===== 导航 ===== -->
+  <header class="nav" id="nav">
+    <div class="nav-inner">
+      <a class="brand" href="#top">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="18" height="18" rx="4" />
+            <circle cx="8.5" cy="9" r="1.6" />
+            <path d="m4 17 5-5 4 4 3-3 4 4" />
+          </svg>
+        </span>
+        图提取
+      </a>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#intro" class="nav-link">产品介绍</a>
+        <a href="#features" class="nav-link">核心功能</a>
+        <a href="#install" class="nav-link">安装步骤</a>
+        <a href="#download" class="nav-link nav-cta">下载插件</a>
+      </nav>
+
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="展开菜单" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- ===== Hero ===== -->
+    <section class="hero">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="hero-inner">
+        <p class="hero-tag">Chrome 扩展 · 本地运行 · 不上传任何图片</p>
+        <h1 class="hero-title">把商品图<br /><span class="grad">一次抓全</span></h1>
+        <p class="hero-sub">
+          在淘宝、天猫、京东、拼多多的详情页右下角点一下，
+          整页商品图就进了预览页。勾选、转 PNG、批量下载，几十张图不用再一张张右键另存。
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#download">立即安装</a>
+          <a class="btn btn-ghost" href="#features">查看功能</a>
+        </div>
+        <p class="hero-note">支持 Chrome / Edge 系列浏览器 · 无需注册</p>
+      </div>
+
+      <!-- 纯 CSS 画的示意图，不引用任何外部图片 -->
+      <div class="hero-mock" aria-hidden="true">
+        <div class="mock-bar">
+          <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+          <span class="mock-url">item.taobao.com/…</span>
+        </div>
+        <div class="mock-body">
+          <div class="mock-grid">
+            <span></span><span></span><span></span>
+            <span></span><span></span><span></span>
+          </div>
+          <div class="mock-btn">🖼 获取图片</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 产品介绍 ===== -->
+    <section class="section" id="intro">
+      <div class="section-head reveal">
+        <p class="eyebrow">产品介绍</p>
+        <h2>为「存图」这件小事做的工具</h2>
+        <p class="lead">
+          做电商的同学大概都经历过：详情页里二十多张图，只能一张张右键、另存为、再改名。
+          素材要归档、要发给设计、要贴进 PPT，来回折腾十几分钟。
+        </p>
+      </div>
+
+      <div class="intro-grid">
+        <article class="intro-card reveal">
+          <div class="ico">🎯</div>
+          <h3>只做一件事</h3>
+          <p>不夹带比价、不收集浏览记录，只把当前页的图片整理出来给你。</p>
+        </article>
+        <article class="intro-card reveal">
+          <div class="ico">🔒</div>
+          <h3>图片不出本机</h3>
+          <p>抓取、转换、下载全在浏览器里完成，没有服务器，也不上传任何文件。</p>
+        </article>
+        <article class="intro-card reveal">
+          <div class="ico">🧩</div>
+          <h3>装在浏览器里</h3>
+          <p>不用装客户端，不用开新软件，右键菜单之外多一个顺手的入口。</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== 核心功能 ===== -->
+    <section class="section section-alt" id="features">
+      <div class="section-head reveal">
+        <p class="eyebrow">核心功能</p>
+        <h2>六件事，一次做完</h2>
+      </div>
+
+      <div class="feature-grid">
+        <article class="feature reveal">
+          <div class="ico ico-blue">⚡</div>
+          <h3>一键提取</h3>
+          <p>点一下右下角按钮，自动滚一遍页面触发懒加载，把还没出现的图也叫醒。</p>
+        </article>
+        <article class="feature reveal">
+          <div class="ico ico-violet">🧹</div>
+          <h3>智能过滤</h3>
+          <p>小于 100×100 的、图标、logo、占位图、1×1 像素全部剔除，只留商品图。</p>
+        </article>
+        <article class="feature reveal">
+          <div class="ico ico-cyan">🖼</div>
+          <h3>集中预览</h3>
+          <p>新标签页里按网格铺开，缩略图配上原始宽高，一眼看出哪张是主图。</p>
+        </article>
+        <article class="feature reveal">
+          <div class="ico ico-amber">☑️</div>
+          <h3>自由勾选</h3>
+          <p>全选、反选、点卡片切换，只要其中几张也不用挨个去找。</p>
+        </article>
+        <article class="feature reveal">
+          <div class="ico ico-green">🔄</div>
+          <h3>统一 PNG</h3>
+          <p>jpg、webp、avif 一律转成 PNG，命名 <code>商品图_001.png</code> 自动补零。</p>
+        </article>
+        <article class="feature reveal">
+          <div class="ico ico-rose">📦</div>
+          <h3>批量下载</h3>
+          <p>逐张下载，或者一次打包成 ZIP；个别图跨域读不到时自动退回原图直链。</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== 安装步骤 ===== -->
+    <section class="section" id="install">
+      <div class="section-head reveal">
+        <p class="eyebrow">安装步骤</p>
+        <h2>四步装好，一分钟</h2>
+        <p class="lead">插件还没上架应用商店，用「加载已解压的扩展程序」安装，开发者模式下即可使用。</p>
+      </div>
+
+      <ol class="steps">
+        <li class="step reveal">
+          <span class="step-no">1</span>
+          <div class="step-body">
+            <h3>下载并解压</h3>
+            <p>点下面的「下载插件」拿到 ZIP，解压到一个固定的文件夹（别放下载目录，可能被清理）。</p>
+          </div>
+        </li>
+        <li class="step reveal">
+          <span class="step-no">2</span>
+          <div class="step-body">
+            <h3>打开扩展管理页</h3>
+            <p>地址栏输入 <code>chrome://extensions</code> 回车；Edge 用 <code>edge://extensions</code>。</p>
+          </div>
+        </li>
+        <li class="step reveal">
+          <span class="step-no">3</span>
+          <div class="step-body">
+            <h3>打开开发者模式</h3>
+            <p>页面右上角有个「开发者模式」开关，打开后才会出现加载按钮。</p>
+          </div>
+        </li>
+        <li class="step reveal">
+          <span class="step-no">4</span>
+          <div class="step-body">
+            <h3>加载已解压的扩展程序</h3>
+            <p>点左上角「加载已解压的扩展程序」，选中刚解压出来的 <code>extension</code> 文件夹，看到「图提取」就成功了。</p>
+          </div>
+        </li>
+      </ol>
+
+      <div class="tip reveal">
+        <strong>用的时候：</strong>打开任意商品详情页，右下角会出现紫色的「获取图片」按钮；
+        如果没出现，先刷新页面，或者确认当前页是商品详情页而不是列表页。
+      </div>
+    </section>
+
+    <!-- ===== 下载 CTA ===== -->
+    <section class="cta" id="download">
+      <div class="cta-inner reveal">
+        <h2>拿走它，明天就能少右键几十次</h2>
+        <p>压缩包里有完整的扩展目录和安装说明，不含任何第三方依赖。</p>
+        <div class="cta-actions">
+          <a class="btn btn-primary btn-lg" href="assets/tu-tiqu-extension.zip" download>下载插件（ZIP）</a>
+          <a class="btn btn-ghost btn-lg" href="#install">再看一遍安装步骤</a>
+        </div>
+        <p class="cta-note">版本 1.0.0 · 压缩包约 15 KB · 未上架商店，需开发者模式安装</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="brand-mark small" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="18" height="18" rx="4" />
+            <circle cx="8.5" cy="9" r="1.6" />
+            <path d="m4 17 5-5 4 4 3-3 4 4" />
+          </svg>
+        </span>
+        图提取 · 电商图片下载插件
+      </div>
+      <p class="footer-note">
+        课程实践项目，仅供学习交流使用。抓取与下载均在本地完成，请遵守目标网站的使用条款。
+      </p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>图提取 · 图片预览</title>
+  <link rel="stylesheet" href="gallery.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-left">
+      <div class="logo">图提取</div>
+      <div class="source" id="source">还没有提取记录</div>
+    </div>
+    <div class="topbar-right">
+      <button class="btn ghost" id="btn-all" type="button">全选</button>
+      <button class="btn ghost" id="btn-invert" type="button">反选</button>
+      <button class="btn ghost" id="btn-clear" type="button">清空选择</button>
+      <span class="counter">已选 <b id="count">0</b> / <span id="total">0</span></span>
+      <button class="btn ghost" id="btn-zip" type="button" disabled>打包 ZIP</button>
+      <button class="btn primary" id="btn-download" type="button" disabled>下载选中</button>
+    </div>
+  </header>
+
+  <div class="progress" id="progress" hidden>
+    <div class="progress-bar"><i id="progress-fill"></i></div>
+    <div class="progress-text" id="progress-text">准备中…</div>
+  </div>
+
+  <main>
+    <div class="grid" id="grid"></div>
+
+    <section class="empty" id="empty">
+      <div class="empty-ico">🖼</div>
+      <h1>还没有图片</h1>
+      <p>
+        打开淘宝 / 天猫 / 京东 / 拼多多的商品详情页，页面右下角会出现一个
+        <b>「获取图片」</b> 按钮，点一下就能把这一页的商品图都抓过来。
+      </p>
+      <p class="hint">如果按钮没出现：先刷新一下页面；或者确认当前页是不是商品详情页。</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>全部下载的文件名为 <code>商品图_001.png</code> 起，按选中顺序编号。</span>
+  </footer>
+
+  <script src="gallery.js"></script>
+</body>
+</html>
